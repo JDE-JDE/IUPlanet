@@ -1,0 +1,214 @@
+<html>
+	<head>
+	    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <title>Your Own Planet</title>
+	    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">	
+  
+	    <style>	
+				body {
+				  	min-width: 1000px;
+				  	z-index:-10;
+				  	zoom: 1;
+				  	background-color: #fff;
+				  	background-repeat: no-repeat;
+				  	background-size: cover;
+				  	-webkit-background-size: cover;
+				  	-o-background-size: cover;
+				  	background-position: center 0;
+				    position:fixed;
+				   	background-image: url(img/background.jpg);
+				 	top: 0;
+				  	left: 0;
+				  	width:100%;
+				  	height:100%;
+				  	margin: 0px;
+				}
+				.rocket {
+				    position: absolute;
+				    margin-left: 39%;
+				    top: 150px;
+				}
+				
+				.fly {
+				    position: absolute;
+				    top: -550px;
+				}
+				.launchpad{
+					position: absolute;
+				    margin-left: 20%;
+				    top: 300px;
+				}
+				.sun{
+					position: absolute;
+				    margin-left: 5%;
+				    top: 50px;
+				  
+				}
+				.alien{
+					position: absolute;
+				    margin-left: 46%;
+				    top: 420px;
+				
+				}
+				.project{
+					position: absolute;
+				    margin-left: 80%;
+				    top: 160px;
+				}
+				.bank{
+					position: absolute;
+				    margin-left: -40%;
+				    top: 100px;
+				}
+				.create{
+					position: absolute;
+				    margin-left: 75%;
+				    top: 360px;
+				}
+				#img{
+			        width:0;
+			        height:0;
+			        margin-left:0px;
+			        margin-top:0px;
+			        padding:0;
+			    }
+			    #showimg{
+			        width:300px;
+			        height:200px;
+			        overflow:hidden;
+			        margin:0 auto;
+			    }
+	
+		    </style>
+		</head>
+		<body>
+			
+		    <div id="move" style="width:100%; height:100%; position:absolute; left: 0px; right: 0px;">
+		    	<div class="launchpad" style="height: 100%;">
+		    		<div class="tower" style="height: 100%;">
+		    			<img src="img/launchpad.png"  onmouseover="this.src='img/launchpad1.png'" onmouseout="this.src='img/launchpad.png'"/>
+		        	</div>
+	   			</div>
+	   			
+	   			<div class="sun" style="height: 100%;">
+		    		<div style="height: 100%;">
+		    			<img src="img/sun.png" onmouseover="this.src='img/sun1.png'" onmouseout="this.src='img/sun.png'"/>
+		        	</div>
+	   			</div>
+		    	
+		    	<div class="rocket" style="height: 100%;">
+		    		<div class="fly" style="height: 100%;">
+		    			<img id="rocket" src="img/rocket.png"  onmouseover="this.src='img/rocket1.png'" onmouseout="this.src='img/rocket.png'"/>
+		        	</div>
+	   			</div>
+	   			
+	   			<div class="project" style="height: 100%;">
+		    		<div class="a globalLoginBtn" style="height: 100%;">
+		    			<img src="img/project.png"  onmouseover="this.src='img/project1.png'" onmouseout="this.src='img/project.png'"/>
+		        	</div>
+	   			</div>
+	   			<div class="create" style="height: 100%;">
+		    		<div style="height: 100%;">
+		    			<img src="img/create.png"/>
+		        	</div>
+	   			</div>
+	   			<div class="bank" style="height: 100%;">
+		    		<div style="height: 100%;">
+		    			<img src="img/bank.png" onmouseover="this.src='img/bank1.png'" onmouseout="this.src='img/bank.png'"/>
+		        	</div>
+	   			</div>
+		    </div>
+			<div class="alien" style="height: 100%;">
+	    		<div class="showimg" id="showimg" style="height: 100%;">
+	    			<img src="img/alien.png" id="img" alt="Here is a pic" />
+	        	</div>
+	   		</div>
+	   		<!--隐藏的对话框-->
+	   		<div class="modal fade" id="loginModal" style="display:none;">			
+				<div class="modal-dialog modal-sm" style="width:540px;">
+					<div class="modal-content" style="border:none;background-color: orangered;">
+						<div class="col-left"></div>
+						<div class="col-right">
+							<div class="modal-header">
+								<button type="button" id="login_close" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+								<h4 class="modal-title" id="loginModalLabel" style="font-size: 22px;color: white;font-family: elephant;">Add Project</h4>
+							</div>
+							<div class="modal-body">
+								<section class="box-login v5-input-txt" id="box-login">
+									<form id="login_form" action="" method="post" autocomplete="off">	
+											<div style="color: white;font-family: elephant;">Project Name<input class="form-control" placeholder="Please Input Project Name"></div>
+											<div style="color: white;font-family: elephant;">Description<input class="form-control" placeholder="Please Input Description"></div>
+											<div style="color: white;font-family: elephant;">Youtube Link<input class="form-control" placeholder="Please Input Youtube Link"></div>
+											<div style="color: white;font-family: elephant;margin: 5px;">Upload Photo<button type="button" style="color: gray;margin-left: 5px;">Choose File</button></div>
+											<div style="color: white;font-family: elephant;margin: 5px;">Upload PDF<button type="button" style="color: gray;margin-left: 11px;">Choose File</button></div>
+											<div style="color: white;font-family: elephant;margin: 5px;">Upload PPT<button type="button" style="color: gray;margin-left: 12px;">Choose File</button></div>
+									</form>
+
+										<button id="login_btn" type="button" class="btn btn-micv5 btn-block globalLogin">Add New Project</button>
+										
+								</section>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>		
+		</body>
+		
+	
+		
+		
+		<script src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/modal.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+		<script>
+			function dragable(id)
+			{
+				var d=document,o=d.getElementById(id),s=o.style,x,p='onmousemove';o.onmousedown=function(e)
+				{
+					e=e||event;x=e.clientX-o.offsetLeft;d[p]=function(e)
+					{
+						e=e||event;s.left=e.clientX-x+'px';
+					};
+					d.onmouseup=function()
+					{
+						d[p]=null
+					}
+				}
+			}
+			dragable("move");
+		</script>
+		
+		<script>
+			$(document).ready(function(){
+				$('.fly').animate({
+			    top: '130'
+				}, 3000)  
+    		});
+    		setTimeout(function(){
+    		$('#img').animate({
+                    width:"30%",
+                    height:"30%",
+                    marginLeft:"50px",
+                    marginTop:"50px"
+	        },3000);},3000
+	       )
+		</script>
+		
+		<script>
+			$("#rocket").click(function(){
+   				$('#img').animate({
+                    width:"0",
+                    height:"0",
+                    marginLeft:"50px",
+                    marginTop:"50px"
+	        	},3000)
+   				setTimeout(function(){
+    		$('.fly').animate({
+                  top: '-620' 
+	        },3000);},3000
+	       )
+			});
+			
+		</script>
+</html>

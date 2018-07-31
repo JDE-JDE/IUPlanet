@@ -1,0 +1,174 @@
+<html>
+	<head>
+	    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <title>Other's Planet</title>
+	    <style>	
+				body {
+				  	min-width: 1000px;
+				  	z-index:-10;
+				  	zoom: 1;
+				  	background-color: #fff;
+				  	background-repeat: no-repeat;
+				  	background-size: cover;
+				  	-webkit-background-size: cover;
+				  	-o-background-size: cover;
+				  	background-position: center 0;
+				    position:fixed;
+				   	background-image: url(img/background.jpg);
+				 	top: 0;
+				  	left: 0;
+				  	width:100%;
+				  	height:100%;
+				  	margin: 0px;
+				}
+				.rocket {
+				    position: absolute;
+				    margin-left: 39%;
+				    top: 150px;
+				}
+				
+				.fly {
+				    position: absolute;
+				    top: -550px;
+				}
+				.launchpad{
+					position: absolute;
+				    margin-left: 20%;
+				    top: 300px;
+				}
+				.sun{
+					position: absolute;
+				    margin-left: 5%;
+				    top: 50px;
+				  
+				}
+				
+			
+				.alien{
+					position: absolute;
+				    margin-left: 46%;
+				    top: 420px;
+				
+				}
+				.project{
+					position: absolute;
+				    margin-left: 110%;
+				    top: 160px;
+				}
+				.clickme{
+					position: absolute;
+				    margin-left: 105%;
+				    top: 360px;
+				}
+				#img{
+			        width:0;
+			        height:0;
+			        margin-left:0px;
+			        margin-top:0px;
+			        padding:0;
+			    }
+			    #showimg{
+			        width:300px;
+			        height:200px;
+			        overflow:hidden;
+			        margin:0 auto;
+			    }
+	
+		    </style>
+		</head>
+		<body>	
+		    <div id="move" style="width:100%; height:100%; position:absolute; left: 0px; right: 0px;">
+		    	<div class="launchpad" style="height: 100%;">
+		    		<div class="tower" style="height: 100%;">
+		    			<img src="img/launchpad.png"  onmouseover="this.src='img/launchpad1.png'" onmouseout="this.src='img/launchpad.png'"/>
+		        	</div>
+	   			</div>
+	   			
+	   			<div class="sun" style="height: 100%;">
+		    		<div style="height: 100%;">
+		    			<img src="img/sun.png" onmouseover="this.src='img/sun1.png'" onmouseout="this.src='img/sun.png'"/>
+		        	</div>
+	   			</div>
+		    	
+		    	<div class="rocket" style="height: 100%;">
+		    		<div class="fly" style="height: 100%;">
+		    			<img id="rocket" src="img/rocket.png"  onmouseover="this.src='img/rocket1.png'" onmouseout="this.src='img/rocket.png'"/>
+		        	</div>
+	   			</div>
+	   			
+	   			<div class="project" style="height: 100%;">
+		    		<div style="height: 100%;">
+		    			<img src="img/project.png"  onmouseover="this.src='img/project1.png'" onmouseout="this.src='img/project.png'"/>
+		        	</div>
+	   			</div>
+	   			<div class="clickme" style="height: 100%;">
+		    		<div style="height: 100%;">
+		    			<img src="img/clickme.png"/>
+		        	</div>
+	   			</div>
+		    </div>
+			<div class="alien" style="height: 100%;">
+	    		<div class="showimg" id="showimg" style="height: 100%;">
+	    			<img src="img/alien.png" id="img" alt="Here is a pic" />
+	        	</div>
+	   		</div>
+	   		
+	   		
+		</body>
+		
+	
+		
+		
+		<script src="js/jquery.js"></script>
+		<script>
+			function dragable(id)
+			{
+				var d=document,o=d.getElementById(id),s=o.style,x,p='onmousemove';o.onmousedown=function(e)
+				{
+					e=e||event;x=e.clientX-o.offsetLeft;d[p]=function(e)
+					{
+						e=e||event;s.left=e.clientX-x+'px';
+					};
+					d.onmouseup=function()
+					{
+						d[p]=null
+					}
+				}
+			}
+			dragable("move");
+		</script>
+		
+		<script>
+			$(document).ready(function(){
+				$('.fly').animate({
+			    top: '130'
+				}, 3000)  
+    		});
+    		setTimeout(function(){
+    		$('#img').animate({
+                    width:"30%",
+                    height:"30%",
+                    marginLeft:"50px",
+                    marginTop:"50px"
+	        },3000);},3000
+	       )
+		</script>
+		
+		<script>
+			$("#rocket").click(function(){
+   				$('#img').animate({
+                    width:"0",
+                    height:"0",
+                    marginLeft:"50px",
+                    marginTop:"50px"
+	        	},3000)
+   				setTimeout(function(){
+    		$('.fly').animate({
+                  top: '-620' 
+	        },3000);},3000
+	       )
+			});
+			
+		</script>
+</html>
